@@ -118,7 +118,7 @@ const Card = props => {
                 variant='body1'
                 className={classes.secPargf}
               >
-                I enjoy programming React applications making web Great Again!
+                I enjoy programming React applications and reading Documentations ^_^.
               </Typography>
             </Box>
           </Box>
