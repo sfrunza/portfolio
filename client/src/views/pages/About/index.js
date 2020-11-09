@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
 const About = props => {
   const classes = useStyles();
   return (
-    <Page title="About Me" className={classes.root} data-aos={'fade'}>
+    <Page title="Resume | SergiuFrunza" className={classes.root} data-aos={'fade'}>
       <Section className={classes.pagePaddingTop}>
         <Card />
       </Section>

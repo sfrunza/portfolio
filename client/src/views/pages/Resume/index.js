@@ -2,11 +2,17 @@ import React from 'react';
 import {
   Container,
   Grid,
-  Paper,
   Typography,
   makeStyles,
+  Box,
+  Button,
 } from '@material-ui/core';
 import Page from 'src/components/Page';
+import { exp, edu, skills } from './data'
+import clsx from 'clsx';
+import ExpCard from './ExpCard'
+import EducationCard from './EducationCard'
+import SkillsCard from './SkillsCard'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,11 +22,15 @@ const useStyles = makeStyles((theme) => ({
   paddingMobile: {
     padding: '2em',
     maxWidth: 750,
+    [theme.breakpoints.down('sm')]: {
+      padding: '2em 0px',
+    }
   },
   title: {
     paddingTop: '6em',
     textAlign: 'center',
     fontWeight: '800',
+    paddingBottom: '2em',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -29,25 +39,15 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   itemsContainer: {
-    flexDirection: 'column',
     alignContent: 'center',
     maxWidth: '750px',
+    justifyContent: 'space-between',
     margin: 'auto',
     padding: '1em 1em',
     [theme.breakpoints.up('sm')]: {
       padding: '1em 3em',
     },
   },
-  item:{
-    width: '100%',
-    maxWidth: '100%'
-  },
-
-  borderRadius: {
-    borderRadius: '8px',
-    boxShadow: '3px 3px 10px -3px #00000047',
-  },
-
   shape: {
     backgroundColor: '#e63946',
     width: 22,
@@ -58,6 +58,16 @@ const useStyles = makeStyles((theme) => ({
       width: 16,
       height: 16,
     },
+  },
+  category: {
+    fontWeight: 800,
+    fontSize: '1.5em',
+  },
+  marginT: {
+    marginTop: '4em',
+  },
+  downButton: {
+    borderRadius: '24px',
   }
 }));
 
@@ -79,18 +89,44 @@ function Resume() {
         Resume
       </Typography>
       <Container className={classes.paddingMobile}>
-          <Paper className={classes.borderRadius}>
-            <Grid container className={classes.itemsContainer}>
-              <Grid
-                item
-                xs={12}
-                md={3}
-                className={classes.item}
-              >
+        <Grid container className={classes.itemsContainer}>
+          <Box mb={6}>
+            <Typography
+              variant='h4'
+              className={classes.category}
+            >
+              Experience
+            </Typography>
+          </Box>
+          <Box>
+            <Button
+              variant='contained'
+              color='secondary'
+              href="https://drive.google.com/file/d/1OuysDMslQ5y7_I0ZEd_BpGzVRarb3Dgp/view?usp=sharing"
+              target="_blank"
+              className={classes.downButton}
+            >
+              Download CV
+            </Button>
+          </Box>
+          <ExpCard data={exp}/>
+        </Grid>
+        <Grid container className={clsx(classes.itemsContainer, classes.marginT)}>
+          <Box mb={6}>
+            <Typography
+              variant='h4'
+              className={classes.category}
+            >
+              Education
+            </Typography>
+          </Box>
+          <EducationCard data={edu}/>
+        </Grid>
 
-              </Grid>
-            </Grid>
-          </Paper>
+        <Grid container className={clsx(classes.itemsContainer, classes.marginT)}>
+          <SkillsCard data={skills}/>
+        </Grid>
+
       </Container>
     </Page>
   );

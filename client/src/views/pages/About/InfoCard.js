@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, List, ListItem, IconButton} from '@material-ui/core';
 import { Image } from 'src/components/atoms';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import PinterestIcon from '@material-ui/icons/Pinterest';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import serg from 'src/assets/img/serii-min.jpg'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -120,7 +120,7 @@ const InfoCard = props => {
               <div className={classes.folioItem}>
                 <div className={classes.imgCont}>
                   <Image
-                    src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    src={serg}
                     alt="asdas"
                     className={clsx('folio__image', classes.image)}
                     lazy={false}
@@ -137,7 +137,7 @@ const InfoCard = props => {
                     className={classes.folioTitle}
                     color="textPrimary"
                   >
-                    Sergiu Frunza
+                    Sergei Frunza
                   </Typography>
                   <Typography
                     variant="h3"
@@ -153,17 +153,26 @@ const InfoCard = props => {
                   </Typography>
                   <List className={classes.folioSocial}>
                     <ListItem className={classes.socialContainer}>
-                      <IconButton className={classes.socialIcon}>
-                        <FacebookIcon className={classes.icon} />
+                      <IconButton
+                        className={classes.socialIcon}
+                        href="https://www.linkedin.com/in/sergiufrunza/"
+                        target='_blank'
+                      >
+                        <LinkedInIcon className={classes.icon} />
                       </IconButton>
-                      <IconButton className={classes.socialIcon}>
+                      <IconButton
+                        className={classes.socialIcon}
+                        href="https://github.com/sfrunza"
+                        target='_blank'
+                      >
+                        <GitHubIcon className={classes.icon} />
+                      </IconButton>
+                      <IconButton
+                        className={classes.socialIcon}
+                        href="https://www.instagram.com/f_sergg/"
+                        target='_blank'
+                      >
                         <InstagramIcon className={classes.icon} />
-                      </IconButton>
-                      <IconButton className={classes.socialIcon}>
-                        <TwitterIcon className={classes.icon} />
-                      </IconButton>
-                      <IconButton className={classes.socialIcon}>
-                        <PinterestIcon className={classes.icon} />
                       </IconButton>
                     </ListItem>
                   </List>

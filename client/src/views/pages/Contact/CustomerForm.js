@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import * as Yup from 'yup';
+import axios from 'axios';
 import { Formik, getIn } from 'formik';
 import {
   Box,
   Button,
   TextField,
   makeStyles,
+  Typography,
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +49,16 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       marginTop: '32px'
     },
+  },
+  submitContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  submitText: {
+    color: '#259829',
+    [theme.breakpoints.down('xs')]: {
+      width: '70%',
+    },
   }
 }));
 
@@ -55,7 +67,7 @@ function CustomerForm({
   ...rest
 }) {
   const classes = useStyles();
-  
+
   return (
     <Formik
       initialValues={{
@@ -67,22 +79,29 @@ function CustomerForm({
       validationSchema={Yup.object().shape({
         name: Yup.string().min(3, 'Must be at least 3').required('Required'),
         email: Yup.string().email('Invalid email').required('Required'),
+        subject: Yup.string().required('Required'),
+        message: Yup.string().required('Required'),
       })}
       onSubmit={async (values, {
         setErrors,
         setStatus,
-        setSubmitting
+        setSubmitting,
+        resetForm,
       }) => {
         try {
-
-          window.scrollTo(0, 0);
+          var user = values
+          axios.post('/users', {user})
+          .catch(error => {
+            debugger
+            console.log('api errors:', error)
+          })
+          resetForm()
           setStatus({ success: true });
-          setSubmitting(false);
+          setTimeout(function(){ setStatus({ success: false })}, 3000);
 
         } catch (err) {
           setErrors({ submit: err.message });
           setStatus({ success: false });
-          setSubmitting(false);
         }
       }}
     >
@@ -91,14 +110,13 @@ function CustomerForm({
         handleBlur,
         handleChange,
         handleSubmit,
-        isSubmitting,
-        setFieldValue,
-        setFieldTouched,
         touched,
         values,
-        resetForm
-      }) => (
+        resetForm,
+        status,
+      }) => {
 
+        return(
         <form
           onSubmit={handleSubmit}
           className={clsx(classes.root, className)}
@@ -109,7 +127,7 @@ function CustomerForm({
               <TextField
                 error={getIn(errors, 'name') && getIn(touched, 'name')}
                 fullWidth
-                label="First Name*"
+                label="Name*"
                 name="name"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -134,7 +152,6 @@ function CustomerForm({
             <TextField
               error={getIn(errors, 'subject') && getIn(touched, 'subject')}
               fullWidth
-              helperText={touched.subject && errors.subject}
               label="Subject"
               name="subject"
               onBlur={handleBlur}
@@ -145,11 +162,11 @@ function CustomerForm({
           </Box>
           <Box mt={4}>
             <TextField
-              id="message"
               label="Message"
-
+              error={getIn(errors, 'message') && getIn(touched, 'message')}
               name='message'
               onChange={handleChange}
+              onBlur={handleBlur}
               value={values.message}
               style={{width: '100%'}}
               multiline
@@ -162,8 +179,21 @@ function CustomerForm({
             display="flex"
             alignItems='center'
           >
+          <Box>
+          {
+            status && status.success ? <Typography
+              variant='h6'
+              className={classes.submitText}
+            >
+              Thank you, message sent!
+            </Typography> : null
 
-            <Box flexGrow={1} />
+          }
+          </Box>
+
+            <Box flexGrow={1} className={classes.submitContainer}>
+
+            </Box>
             <Box>
               <Button
                 color="secondary"
@@ -176,7 +206,7 @@ function CustomerForm({
             </Box>
           </Box>
         </form>
-      )}
+      )}}
     </Formik>
 
   );
