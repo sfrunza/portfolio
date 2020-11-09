@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
   },
   paddingMobile: {
-    padding: '2em',
+    padding: '3em 2em',
     maxWidth: 750,
   },
   title: {

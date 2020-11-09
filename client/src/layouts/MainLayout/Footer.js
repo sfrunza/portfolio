@@ -5,31 +5,41 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Grid,
+  IconButton,
 } from '@material-ui/core';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import PinterestIcon from '@material-ui/icons/Pinterest';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(2, 0),
-    background: '#fff',
-    overflow: 'hidden',
-    width: '100%',
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
+    height: 100,
   },
   wrapper: {
     display: 'flex',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     padding: theme.spacing(2, 0),
     color: '#fff',
-
-    minWidth: '370px',
+    minWidth: '250px',
     margin: 'auto',
   },
+  socialIcon: {
+    padding: 0,
+    marginRight: theme.spacing(1),
+    color: '#000',
+    '&:hover': {
+      background: 'transparent',
+    },
+    '&:last-child': {
+      marginRight: 0,
+    },
+  },
+  followBox: {
+    display: 'flex',
+  }
 }));
 
 const Footer = props => {
@@ -45,16 +55,31 @@ const Footer = props => {
             © {new Date().getFullYear()}
           </Typography>
           <Typography className={classes.content}>
-            <FacebookIcon className={classes.icon} />
+            <IconButton
+              className={classes.socialIcon}
+              href="https://www.linkedin.com/in/sergiufrunza/"
+              target='_blank'
+            >
+              <LinkedInIcon className={classes.icon} />
+            </IconButton>
           </Typography>
           <Typography className={classes.content}>
-            <InstagramIcon className={classes.icon} />
+            <IconButton
+              className={classes.socialIcon}
+              href="https://github.com/sfrunza"
+              target='_blank'
+            >
+              <GitHubIcon className={classes.icon} />
+            </IconButton>
           </Typography>
           <Typography className={classes.content}>
-            <TwitterIcon className={classes.icon} />
-          </Typography>
-          <Typography className={classes.content}>
-            <PinterestIcon className={classes.icon} />
+            <IconButton
+              className={classes.socialIcon}
+              href="https://www.instagram.com/f_sergg/"
+              target='_blank'
+            >
+              <InstagramIcon className={classes.icon} />
+            </IconButton>
           </Typography>
         </Grid>
       </Grid>

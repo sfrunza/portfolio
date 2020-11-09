@@ -22,13 +22,4 @@ export const news = [
     href: 'https://weather-review.herokuapp.com/',
     tech: 'RoR, React.js, JQuery, PostgreSQL, Devise'
   },
-  {
-    cover: {
-      src: 'https://static.toiimg.com/photo/72975551.cms',
-      srcSet: 'https://static.toiimg.com/photo/72975551.cms',
-    },
-    title: 'Sweet Cakes',
-    description: 'Optimize the schedules of thousands of trains in minutes.',
-    href: 'http://my-full-stack.herokuapp.com/'
-  },
 ];

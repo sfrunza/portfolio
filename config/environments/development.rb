@@ -49,6 +49,18 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.action_mailer.default_url_options = { :host => 'localhost://3001' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => 'smtp.gmail.com',
+      :port                 => 587,
+      :domain               => ENV["MAIL_DOMAIN"],
+      :user_name            => ENV["MAIL_USERNAME"],
+      :password             => ENV["MAIL_PASSWORD"],
+      :authentication       => 'plain',
+      :enable_starttls_auto => true
+  }
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 

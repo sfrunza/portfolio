@@ -77,6 +77,8 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     foreman (0.82.0)
       thor (~> 0.19.1)
     globalid (0.4.2)
@@ -95,6 +97,9 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    mail_form (1.8.0)
+      actionmailer (>= 5.0)
+      activemodel (>= 5.0)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
@@ -201,9 +206,11 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  figaro
   foreman (~> 0.82.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mail_form
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rack-cors

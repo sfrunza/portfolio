@@ -124,7 +124,7 @@ function Topbar({ className, onSidebarOpen, pages, ...rest }) {
             to="/"
           >
             <div className={classes.shape} />
-            Sergiu Frunza
+            Sergei Frunza
           </Typography>
           <Typography
             variant="subtitle1"
