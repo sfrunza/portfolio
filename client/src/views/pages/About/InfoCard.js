@@ -137,7 +137,7 @@ const InfoCard = props => {
                     className={classes.folioTitle}
                     color="textPrimary"
                   >
-                    Sergei Frunza
+                    Sergiu Frunza
                   </Typography>
                   <Typography
                     variant="h3"

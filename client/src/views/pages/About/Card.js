@@ -112,13 +112,13 @@ const Card = props => {
               <Typography
                 variant='body1'
               >
-                Hello, I'm Sergei, a Web Developer and Content Creator based in Boston.
+                Hello, I'm Sergiu, a Web Developer and Content Creator based in Boston.
               </Typography>
               <Typography
                 variant='body1'
                 className={classes.secPargf}
               >
-                I enjoy programming React applications and reading Documentations ^_^.
+                I enjoy programming React applications, going hiking and playing soccer.
               </Typography>
             </Box>
           </Box>
