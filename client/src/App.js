@@ -12,10 +12,9 @@ import {
 } from '@material-ui/core';
 import ScrollReset from 'src/components/ScrollReset';
 import { createTheme } from 'src/theme';
-import Routes from 'src/RoutesAlternative';
-import 'swiper/swiper-bundle.css';
+import Routes from 'src/Routes';
 import 'aos/dist/aos.css';
-import './assets/scss/index.scss';
+import './assets/scss/index.css';
 import AOS from 'aos';
 
 const history = createBrowserHistory();

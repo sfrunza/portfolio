@@ -24,12 +24,7 @@ a {
 }
 
 .text-highlighted {
-  // color: #F9B934;
   color: #7c4dff;
-
-  &__primary {
-    color: #3f51b5;
-  }
 }
 .MuiButton-root {
   text-transform: none;

@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
   },
   paddingMobile: {
-    padding: '3em 2em',
     maxWidth: 750,
+    paddingBottom: 32,
   },
   title: {
     paddingTop: '6em',
@@ -34,14 +34,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: '8em',
+    paddingBottom: '6em',
   },
   itemsContainer: {
     flexDirection: 'column',
     alignContent: 'center',
     maxWidth: '750px',
     margin: 'auto',
-    padding: '1em 1em',
+    padding: '1em',
     [theme.breakpoints.up('sm')]: {
       padding: '1em 3em',
     },

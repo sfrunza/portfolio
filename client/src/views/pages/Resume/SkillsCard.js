@@ -15,6 +15,7 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    paddingBottom: 32,
   },
   textWhite: {
     color: 'white',

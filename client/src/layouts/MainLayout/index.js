@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery } from '@material-ui/core';
-import TopBar from './TopBar';
-import Footer from './Footer'
-import Sidebar from './Sidebar'
+// import TopBar from './TopBar';
+// import Footer from './Footer'
+// import Sidebar from './Sidebar'
+const TopBar = React.lazy(() => import('./TopBar'));
+const Footer = React.lazy(() => import('./Footer'));
+const Sidebar = React.lazy(() => import('./Sidebar'));
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -1,8 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Page from 'src/components/Page';
 import { Section } from 'src/components/organisms';
-import Card from './Card'
+
+const Page = React.lazy(() => import('src/components/Page'));
+const Card = React.lazy(() => import('./Card'));
 
 const useStyles = makeStyles(theme => ({
   root: {

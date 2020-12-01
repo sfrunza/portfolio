@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, List, ListItem, IconButton} from '@material-ui/core';
-import { Image } from 'src/components/atoms';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -34,9 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     objectFit: 'cover',
-    height: 200,
     borderRadius: '50%',
-    width: 200,
   },
   imgCont: {
     padding: '2em',
@@ -119,11 +116,13 @@ const InfoCard = props => {
           <div className={classes.gridWrapper}>
               <div className={classes.folioItem}>
                 <div className={classes.imgCont}>
-                  <Image
+                  <img
                     src={serg}
                     alt="asdas"
+                    width='200px'
+                    height='200px'
                     className={clsx('folio__image', classes.image)}
-                    lazy={false}
+                    // lazy={false}
                   />
                 </div>
                 <div
@@ -157,6 +156,8 @@ const InfoCard = props => {
                         className={classes.socialIcon}
                         href="https://www.linkedin.com/in/sergiufrunza/"
                         target='_blank'
+                        rel="noreferrer"
+                        aria-label="Linkedin"
                       >
                         <LinkedInIcon className={classes.icon} />
                       </IconButton>
@@ -164,6 +165,8 @@ const InfoCard = props => {
                         className={classes.socialIcon}
                         href="https://github.com/sfrunza"
                         target='_blank'
+                        rel="noreferrer"
+                        aria-label="Github"
                       >
                         <GitHubIcon className={classes.icon} />
                       </IconButton>
@@ -171,6 +174,8 @@ const InfoCard = props => {
                         className={classes.socialIcon}
                         href="https://www.instagram.com/f_sergg/"
                         target='_blank'
+                        rel="noreferrer"
+                        aria-label="Intagram"
                       >
                         <InstagramIcon className={classes.icon} />
                       </IconButton>
