@@ -20,11 +20,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
   },
   paddingMobile: {
-    padding: '2em',
     maxWidth: 750,
-    [theme.breakpoints.down('sm')]: {
-      padding: '2em 0px',
-    }
   },
   title: {
     paddingTop: '6em',
@@ -43,10 +39,10 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '750px',
     justifyContent: 'space-between',
     margin: 'auto',
-    padding: '1em 1em',
-    [theme.breakpoints.up('sm')]: {
-      padding: '1em 3em',
-    },
+    // padding: '1em',
+    // [theme.breakpoints.up('sm')]: {
+    //   padding: '1em 3em',
+    // },
   },
   shape: {
     backgroundColor: '#e63946',

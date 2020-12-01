@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { useMediaQuery, Grid, Box, Typography, Button } from '@material-ui/core';
-import InfoCard from './InfoCard'
+// import InfoCard from './InfoCard'
+
 import { Link as RouterLink } from 'react-router-dom';
 
+const InfoCard = React.lazy(() => import('./InfoCard'));
+
 const useStyles = makeStyles(theme => ({
-  root: {},
+  root: {
+    overflow: 'hidden',
+  },
   title: {
     fontWeight: '800',
     fontSize: '5em',
@@ -20,13 +25,14 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'space-around',
     height: '100%',
-    maxWidth: '350px',
+    maxWidth: 350,
     '& div': {
       backgroundColor: 'transparent',
     },
     [theme.breakpoints.down('sm')]: {
       height: 350,
       padding: '0em 1em',
+      maxWidth: 475,
     },
   },
   secPargf: {
@@ -34,8 +40,8 @@ const useStyles = makeStyles(theme => ({
   },
   links: {
     display: 'flex',
-    justifyContent: 'space-between',
-    width: '90%',
+    justifyContent: 'space-around',
+    // width: '90%',
   },
   button: {
     borderRadius: '24px',
@@ -77,7 +83,7 @@ const Card = props => {
           <InfoCard
           />
         </Grid>
-        <Grid item container alignItems="center" xs={12} md={6} display='felx'>
+        <Grid item container alignItems="center" xs={12} md={6} display='felx' justify="center">
           <Box className={classes.benefit}>
             <Typography
               variant='h1'

@@ -12,7 +12,6 @@ import {
   Typography,
   Box
 } from '@material-ui/core';
-import { Image } from 'src/components/atoms';
 
 const useStyles = makeStyles(theme => ({
   root: {},
@@ -95,6 +94,8 @@ const ProjectCard = props => {
                         className={classes.button}
                         href={item.href}
                         target="_blank"
+                        rel="noreferrer"
+                        aria-label={item.title}
                       >
                         Check it Out!
                       </Button>
@@ -122,14 +123,12 @@ const ProjectCard = props => {
 
                   </CardContent>
                   <CardMedia className={classes.cardMedia}>
-                    <Image
-                      {...item.cover}
+                    <img
+                      src={item.cover.src}
                       alt={item.title}
+                      width='100%'
+                      height='100%'
                       className={classes.image}
-                      lazyProps={{
-                        width: '100%',
-                        height: '100%',
-                      }}
                     />
                   </CardMedia>
                 </Card>

@@ -35,9 +35,9 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     maxWidth: '750px',
     margin: 'auto',
-    padding: '1em 1em',
+    padding: '1em',
     [theme.breakpoints.up('sm')]: {
-      padding: '1em 3em',
+      padding: '3em',
     },
   },
   item:{

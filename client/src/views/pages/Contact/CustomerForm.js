@@ -59,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       width: '70%',
     },
+  },
+  button: {
+    borderRadius: 24,
   }
 }));
 
@@ -200,6 +203,7 @@ function CustomerForm({
                 type="submit"
                 variant="contained"
                 size="large"
+                className={classes.button}
               >
                 Submit
               </Button>

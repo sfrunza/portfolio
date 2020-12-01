@@ -78,7 +78,7 @@ const Footer = props => {
             <Box>
               <Typography
                 className={classes.content}
-                variant='h6'
+                variant='body1'
               >
                 Email
               </Typography>
@@ -98,7 +98,7 @@ const Footer = props => {
             <Box>
               <Typography
                 className={classes.content}
-                variant='h6'
+                variant='body1'
               >
                 Follow
               </Typography>
@@ -111,6 +111,8 @@ const Footer = props => {
                   className={classes.socialIcon}
                   href="https://www.linkedin.com/in/sergiufrunza/"
                   target='_blank'
+                  rel="noreferrer"
+                  aria-label="Linkedin"
                 >
                   <LinkedInIcon className={classes.icon} />
                 </IconButton>
@@ -122,6 +124,8 @@ const Footer = props => {
                   className={classes.socialIcon}
                   href="https://github.com/sfrunza"
                   target='_blank'
+                  rel="noreferrer"
+                  aria-label="Github"
                 >
                   <GitHubIcon className={classes.icon} />
                 </IconButton>
@@ -133,6 +137,8 @@ const Footer = props => {
                   className={classes.socialIcon}
                   href="https://www.instagram.com/f_sergg/"
                   target='_blank'
+                  rel="noreferrer"
+                  aria-label="Instagram"
                 >
                   <InstagramIcon className={classes.icon} />
                 </IconButton>
