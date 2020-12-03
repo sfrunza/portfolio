@@ -72,7 +72,7 @@ function Error404View() {
           justifyContent="center"
         >
           <Button
-            color="secondary"
+            color="primary"
             component={RouterLink}
             to="/"
             variant="outlined"
