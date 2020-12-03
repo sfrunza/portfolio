@@ -39,10 +39,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '750px',
     justifyContent: 'space-between',
     margin: 'auto',
-    // padding: '1em',
-    // [theme.breakpoints.up('sm')]: {
-    //   padding: '1em 3em',
-    // },
   },
   shape: {
     backgroundColor: '#e63946',
@@ -98,7 +94,7 @@ function Resume() {
             <Button
               variant='contained'
               color='secondary'
-              href="https://drive.google.com/file/d/1OuysDMslQ5y7_I0ZEd_BpGzVRarb3Dgp/view?usp=sharing"
+              href="https://drive.google.com/file/d/1Cj-r0jhLianROl8WF2cenj7UUA14_yCD/view?usp=sharing"
               target="_blank"
               className={classes.downButton}
             >

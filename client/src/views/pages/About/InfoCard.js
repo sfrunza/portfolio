@@ -24,12 +24,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#f1faee',
     [theme.breakpoints.up('sm')]: {
       margin: theme.spacing(2),
-    },
-    '&:last-child': {
-      [theme.breakpoints.up('md')]: {
-        marginBottom: 0,
-      },
-    },
+    }
   },
   image: {
     objectFit: 'cover',
@@ -122,7 +117,6 @@ const InfoCard = props => {
                     width='200px'
                     height='200px'
                     className={clsx('folio__image', classes.image)}
-                    // lazy={false}
                   />
                 </div>
                 <div

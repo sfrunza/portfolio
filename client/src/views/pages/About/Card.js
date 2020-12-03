@@ -41,7 +41,6 @@ const useStyles = makeStyles(theme => ({
   links: {
     display: 'flex',
     justifyContent: 'space-around',
-    // width: '90%',
   },
   button: {
     borderRadius: '24px',

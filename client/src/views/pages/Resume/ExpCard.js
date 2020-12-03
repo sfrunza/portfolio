@@ -39,7 +39,6 @@ const useStyles = makeStyles(theme => ({
     boxShadow: '3px 3px 10px -3px #00000047',
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
-      // paddingTop: '2em',
     },
   },
   cardContent: {
@@ -158,13 +157,7 @@ const ExpCard = props => {
 };
 
 ExpCard.propTypes = {
-  /**
-   * External classes
-   */
   className: PropTypes.string,
-  /**
-   * data to be rendered
-   */
   data: PropTypes.array.isRequired,
 };
 
