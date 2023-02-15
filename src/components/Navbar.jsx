@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const navigation = [
   { name: 'About me', href: '/' },
-  { name: 'Resume', href: '/resume' },
+  // { name: 'Resume', href: null },
   { name: 'Projects', href: '/projects' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -97,7 +97,6 @@ export default function Navbar() {
             </button>
           </div>
           <div className="mt-6 flow-root">
-            {/* <div className="-my-6 divide-y divide-gray-500/10"> */}
             <div className="space-y-2 py-6 flex justify-center flex-col items-center">
               {navigation.map((item) => (
                 <a
@@ -112,7 +111,6 @@ export default function Navbar() {
                 </a>
               ))}
             </div>
-            {/* </div> */}
           </div>
         </Dialog.Panel>
       </Dialog>
